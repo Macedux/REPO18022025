@@ -6,7 +6,7 @@
       - "3306:3306"
   php:
     image: jumice/personasbbdd
-    container_name: contenedorpersonasbbdd
+    container_name: contenedorpersonasapp
     ports:
       - "8080:80"
     depends_on:
