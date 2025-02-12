@@ -44,7 +44,7 @@ jobs:
           source: ./compose.yml
           target: ~/deploy/
 
-      # Desplegar la aplicación en el servidor remoto usando docker-compose
+      # Desplegar la aplicación en el servidor remoto usando docker-composea
       - name: Deploy with Docker Compose
         uses: appleboy/ssh-action@master
         with:
