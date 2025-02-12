@@ -1,30 +1,23 @@
-services:
+ services:
   db:
-    context: ./mysql
-    image: jumice93/calculadora:v1
-    container_name: contenedordb
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: personas
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+    image: jumice93/personasbbdd
+    container_name: contenedorpersonasbbdd
     ports:
-     - "3306:3306"
-     
+      - "3306:3306"
   php:
-    context: ./php
-    image: jumice93/calculadora:v1
-    container_name: contenedorMiApp
+    image: rsanzfloridauni/personasbbdd
+    container_name: contenedorpersonasbbdd
     ports:
       - "8080:80"
-
-  phpmyadmin:
+    depends_on:
+      - db
+ phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: contenedorPhpMyAdmin
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: contrasenyaRoot
     ports:
       - "8081:80"
     depends_on:
-     - db
+      - db
