@@ -5,7 +5,7 @@
     ports:
       - "3306:3306"
   php:
-    image: jumice/personasbbdd
+    image: jumice93/personasbbdd
     container_name: contenedorpersonasapp
     ports:
       - "8080:80"
