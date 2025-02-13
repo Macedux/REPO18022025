@@ -1,7 +1,7 @@
 <?php
 $servername = "db";  // Nombre del servicio en Docker Compose
-$username = "usuario1";
-$password = "contrasenyaUsuario1";
+$username = "root";
+$password = "";
 $dbname = "personas";
 
 // Crear conexión
