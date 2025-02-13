@@ -1,12 +1,17 @@
  services:
   db:
-    image: jumice93/personasbbdd
-    container_name: contenedorpersonasbbdd
+    image: jumice93/mi_cine:v1
+    container_name: contenedorMiCine
+    environment:
+      MYSQL_ROOT_PASSWORD: contrasenyaRoot
+      MYSQL_DATABASE: cine
+      MYSQL_USER: usuario1
+      MYSQL_PASSWORD: contrasenyaUsuario1
     ports:
       - "3306:3306"
   php:
-    image: jumice93/personasbbdd
-    container_name: contenedorpersonasapp
+    image: jumice93/mi_app_cine:v1
+    container_name: contenedorMiApp
     ports:
       - "8080:80"
     depends_on:
