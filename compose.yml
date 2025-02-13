@@ -16,6 +16,7 @@
       - "8080:80"
     depends_on:
       - db
+      
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: contenedorPhpMyAdmin
